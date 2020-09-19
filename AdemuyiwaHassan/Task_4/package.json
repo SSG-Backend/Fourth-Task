@@ -1,0 +1,16 @@
+{
+  "name": "task_4",
+  "version": "1.0.0",
+  "description": "upload file in nodejs",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  }
+}
