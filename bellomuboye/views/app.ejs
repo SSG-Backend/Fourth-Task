@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+<head> 
+	<meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<title>Task 4 - Bell Omuboye</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+</head> 
+
+<body> 
+	<header class="p-5 vh-100 d-flex align-items-center justify-content-center">
+		<div class="container text-center">
+			<h1 class="hero__title mb-3">Image Uploader</h1> 
+			<p class="hero__desc">Upload, Store and Save Your Images</p>
+			<p class="hero__desc">No More Xenders or Bluetooth or any of the sort</p>
+			<a href="#input-form" class="btn btn-primary hero__cta">Begin!</a>
+		</div>
+	</header>
+
+	<section id="input-form" class="input-form p-5">
+		<div class="container">
+			<h2 class="text-center">Upload a New Image</h2>
+			<form action="/" method="POST" enctype="multipart/form-data"> 
+				<div class="form-group">
+					<label for="name">Image Title</label>
+					<input type="text" class="form-control" id="name" name="name" placeholder="Image Title" required>
+				</div>
+				<div class="form-group">
+					<label for="desc">Image Description</label>
+					<textarea name="desc" id="desc" rows="2" class="form-control" placeholder="Describe your image" required=""></textarea>
+				</div>
+				<div class="form-group">
+					<label for="image">Select Image</label>
+					<input class="form-control-file" type="file" name="image" id="image" required>
+				</div>
+				<button type="submit" class="btn btn-primary">Upload Image</button>
+			</form>
+		</div>
+	</section>
+
+	<section id="uploaded-images" class="uploaded-images p-5">
+		<div class="container">
+			<h2 class="text-center mb-3">View your previous Uploads</h2>
+			<div class="gallery row">
+
+				<% items.forEach(function(image) { %>
+					<div class="col-md-6 col-lg-2">
+						<div class="card">
+						  <img src="img/<%= image.filename %>.<%= image.filetype %>" class="card-img-top img-fluid" alt="...">
+						  <div class="card-body">
+						    <h5 class="card-title"><%= image.name %></h5>
+						    <p class="card-text"><%= image.desc %></p>
+						  </div>
+						  <div class="card-footer">
+						  	<a href="img/<%= image.filename %>.<%= image.filetype %>" download ="<%= image.name %>.<%= image.filetype %>">Download</a>
+						  </div>
+						</div>
+					</div>
+				<% }) %>
+
+			</div>
+		</div>
+	</section>
+
+	<footer class="p-4 mt-4 bg-dark text-center">
+		<div class="container">
+			<p class="text-white m-0">Developed by Bell Omuboye <a href="github.com/bellomuboye">GitHub</a></p>
+		</div>
+	</footer>
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body> 
+
+</html> 
