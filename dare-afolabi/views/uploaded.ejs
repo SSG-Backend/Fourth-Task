@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Images</title>
+    <style>
+        body{
+            background-color: rgb(209, 219, 216);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <a href="/" class="btn btn-info btn-block">Image Uploader</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <% if (files) { %>
+                    <% files.forEach(function(file) {%>
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <div class="card-title">
+                                    <%= file.filename %>
+                            </div>
+                        </div>
+                        <div class="card-body justify-content-center">
+                            <% if(file.isImage) { %>
+                                
+                        <!-- <img src="../public/images/<%= file.filename %>" width="250" alt="images" class="img-responsive"> -->
+                        <img src="images/<%= file.filename %>" width="250" alt="images" class="img-responsive">
+                            <% } else { %>
+                            <p><% file.filename %></p>
+                            <% } %>
+                        </div>
+                        
+                        <!-- Delete button -->
+                        <!-- <div class="card-footer">
+                            <form action="/files/del/<%= file._id %>" method="post">
+                                <button type="submit" class="btn btn-danger">Remove</button>
+                            </form>
+                        </div> -->
+                    </div>
+                    <% }) %>
+                    <% } else { %>
+                    <p>No files to show</p>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
