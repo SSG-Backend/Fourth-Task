@@ -1,0 +1,20 @@
+{
+  "name": "image_upload",
+  "version": "1.0.0",
+  "description": "upload images",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "john",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongodb": "^3.6.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2"
+  }
+}
